@@ -1,0 +1,133 @@
+.bodyy{
+  font-family: 'Lobster Two', cursive;
+  font-family: 'Shantell Sans', cursive;
+
+}
+.bdy{
+padding:15px;
+}
+/** navbar **/
+.nav-item{
+letter-spacing:.2em;
+font-size:14px;
+text-transform:uppercase;
+}
+.dropdown-item{
+letter-spacing:.2em;
+font-size:14px;
+text-transform:uppercase;
+}
+/*** footer ***/
+.foot{
+background-color:#B2BEB5;
+height:50px;
+}
+.foot p{
+padding-top:15px;
+font-size:16px;
+}
+
+
+.all{
+text-transform:uppercase;
+
+}
+
+
+
+/** category **/
+.our{
+padding:20px;
+}
+.my_row_class{
+padding_top:15px;
+}
+.my_row_class .mx_auto{
+color:#000
+font-size:20px;
+}
+.my_image{
+width:100%
+height:auto;
+}
+.my_title{
+font-size:20px;
+text-transform:uppercase;
+letter-spacing:.2em;
+}
+.my_image_padding{
+padding:20px;}
+}
+.imagebann
+{
+width:100%;
+height=430px;
+}
+.my_bottom_margin{
+margin-bottom:10px;
+}
+.card-body h4{
+font-size:14px;
+text-transform:uppercase
+letter-spacing:.2em;}
+
+
+
+.card {
+    min-height:200px;
+}
+
+
+
+
+/** product **/
+.my_prod_row_class{
+padding-top:20px;
+padding-bottom:30px;
+padding:15px;
+}
+
+.my_prod_row_class .m_auto{
+font-size:12px;
+text-decoration:none;
+
+}
+.img{
+width:100%
+height:430;
+}
+
+.my_search{
+padding_top:20px;
+}
+
+
+
+/*** cart ***/
+.my_customtable{
+min-width=400px;
+font-size:14px;
+}
+.my_customthead{
+   text-transform:uppercase;
+   font-weight:normal;
+   font-spacing:2em;
+   background-color:#B2BEB5;
+
+}
+.custom_a{
+  text-decoration:none;
+}
+.custom_icon{
+   text-decoration:none;
+   color:skyblue;
+}
+.my_custombutton{
+  margin-top:50px;
+}
+.textt{
+
+    font-size:10px;
+    text-transform:uppercase;
+     font-family: 'Garamond';
+}

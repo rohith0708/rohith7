@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+  {% if category %}
+    {{category.description|truncatewords:155}}
+  {% else %}
+    welcome to digital mart store
+  {% endif %}
+{% endblock %}
+
+{% block title %}
+  {% if category %}
+    {{category.name}}- digital mart
+  {% else %}
+    new collections
+  {% endif %}
+{% endblock %}
+
+{% block body %}
+  {% if category %}
+    <div class="#">
+
+        <p class="all"><a href="{% url 'ecomapp:allprodcat' %}">all product</a></p>
+    </div>
+    {% endif %}
+ <div class="mx_auto">
+   {% if category %}
+    <img class="my_image" src="{{category.image.url}}" alt="{{category.name}}" width="100%" height="430">
+ </div><br>
+  <div>
+      <h1 class="text-center my_title">{{category.name}}</h1>
+<!--      <p class="text-justify">{{category.description}}</p>-->
+  </div>
+    {% else %}
+ <div>
+     <img class="imagebann"  src="{% static 'img/banner.png' %}" alt="ourproducts" width="100%" height="430">
+
+ </div><br>
+  <div class="our">
+    <h1 class="text-center my_title"> our collections</h1>
+    <p class="text-justify">In 1946, twelve albums by eleven artists topped Billboard's weekly chart of the best-selling albums in the United States. At the time, the chart was titled Best-Selling Popular Record Albums, and it collected sales data from United States-based record dealers, numbering at least 200 in January and increasing to over 4,000 by the end of the year. The first chart-topper was Merry Christmas</p>
+  </div>
+    {% endif %}
+  <div class="container">
+      <div class="row">
+      {% for product in products.object_list %}
+      <div class="my_bottom_margin col-9 col-sm-12 col-md-4 xol-lg-4">
+          <div class="card h-100 text-center" style="min-width:18rem;">
+               <a href="{{product.get_url}}"><img class="card-img-top" src="{{product.image.url}}" alt="{{product.name}}"></a>
+              <div class="card-body ">
+                  <h4>{{product.name}}</h4>
+                  <h4>RS : {{product.price}}</h4>
+
+               </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+      <div class="mx-auto">
+          {% if products.paginator.num_pages > 1 %}
+
+          <hr>
+          <div class="text-center">
+              {% for pg in products.paginator.page_range %}
+              <a href="?page={{pg}}" class="btn btn-light bt-sm {% if products.number == pg %} active {% endif %}">{{pg}}</a>
+                    {% endfor %}
+          </div>
+          {% endif %}
+      </div>
+      <br>
+
+  </div>
+{% endblock %}

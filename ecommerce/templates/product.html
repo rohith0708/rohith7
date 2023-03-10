@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+
+    {{product.description|truncatewords:155}}
+{% endblock %}
+
+{% block title %}
+  {% if category %}
+    {{product.name}}- digital mart
+
+  {% endif %}
+{% endblock %}
+
+{% block body %}
+
+  <div class="row my_prod_row_class">
+      <div class="mx_auto">
+          <p><a href="{% url 'ecomapp:allprodcat' %}">home</a>|<a href="{{Product.category.get_url}}">{{Product.category}}</a>|{{Product.name}}</p>
+
+      </div>
+  </div>
+<br>
+
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+            <div style="min-width:18rem">
+       <img class="img" src ="{{Product.image.url}}" alt="{{product.name}}" width="75%">
+
+               </div>
+            </div>
+
+<div>
+            </div>
+
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+    <h1 class="my_prd_title">{{Product.name}}</h1>
+        <p><b>₹{{Product.price}}</b></p>
+        <p class="text-justify">{{Product.description}}</p>
+        {% if Product.stock <= 0 %}
+        <p class="text-justify">out of stock</p>
+        {% else %}
+        <a class="btn btn-secondary" href="{% url 'cart:add_cart' Product.id %}">add to cart</a>
+        {% endif %}
+
+</div>
+</div>
+</div>
+
+
+{% endblock %}
