@@ -1,0 +1,19 @@
+.banner{
+background-color:mediumseagreen	;
+color:black;
+width:100%;
+height:90px;
+margin-bottom:20px;
+
+
+}
+
+
+body{
+text-align:center;}
+.banner-text{
+top:4%;
+left:47%;
+position:absolute;
+transform:transform;
+}
